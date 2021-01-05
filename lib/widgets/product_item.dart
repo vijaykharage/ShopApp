@@ -32,7 +32,7 @@ class ProductItem extends StatelessWidget {
           ),
         ),
         footer: GridTileBar(
-          backgroundColor: Colors.black.withOpacity(0.5),
+          backgroundColor: Colors.black.withOpacity(0.2),
           title: MediaQuery.of(context).orientation == Orientation.landscape
               ? Text(
                   product.title,
@@ -89,9 +89,8 @@ class ProductItem extends StatelessWidget {
             },
           ),
         ),
-        header: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[],
+        header: GridTileBar(
+          backgroundColor: Colors.black.withOpacity(0.2),
         ),
       ),
     );

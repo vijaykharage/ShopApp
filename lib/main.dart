@@ -38,7 +38,8 @@ class MyShopApp extends StatelessWidget {
           canvasColor: Colors.black,
           textTheme: ThemeData.light().textTheme.copyWith(
             title: TextStyle(color: Colors.white),
-            body1: TextStyle(color: Colors.white60)
+            body1: TextStyle(color: Colors.white60),
+            body2: TextStyle(color: Colors.black)
           ),
         ),
         routes: {

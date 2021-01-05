@@ -26,17 +26,21 @@ class CartScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.all(5),
+                    padding: EdgeInsets.all(15),
                     child: Text(
                       'Total: ',
                       style: TextStyle(color: Colors.black),
                     ),
                   ),
-                  Chip(
-                    label: FittedBox(
-                      child: Text(
-                        '\$ ${cartProvider.totalAmount.toStringAsFixed(2)}',
-                        style: Theme.of(context).textTheme.title,
+                  Spacer(),
+                  SizedBox(
+                    width: 100,
+                    child: Chip(
+                      label: FittedBox(
+                        child: Text(
+                          '\$ ${cartProvider.totalAmount.toStringAsFixed(2)}',
+                          style: Theme.of(context).textTheme.title,
+                        ),
                       ),
                     ),
                   ),

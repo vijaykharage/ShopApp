@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'dart:math';
 
 import '../models/order.dart';
 
@@ -47,7 +46,10 @@ class _OrderItemState extends State<OrderItem> {
                     children: widget.order.products.map((product) {
                       return ListTile(
                         title: Text(product.title),
-                        trailing: Text('${product.quantity}x ${product.price}'),
+                        trailing: Text(
+                          '${product.quantity}x ${product.price}',
+                          style: TextStyle(color: Colors.black),
+                        ),
                       );
                     }).toList(),
                   ),

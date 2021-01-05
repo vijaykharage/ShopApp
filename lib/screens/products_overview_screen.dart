@@ -28,7 +28,13 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
       drawer: DrawerWidget(),
       appBar: AppBar(
         backgroundColor: Colors.red[800],
-        title: Image.asset('./lib/assets/images/tesla-logo.png'),
+        title: Container(
+          padding: const EdgeInsets.all(15),
+          child: Image.asset(
+            './lib/assets/images/tesla-logo.png',
+            fit: BoxFit.cover,
+          ),
+        ),
         actions: <Widget>[
           Consumer<CartProvider>(
             /// here cartChild referes to Consumer child: IconButton()
