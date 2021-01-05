@@ -33,10 +33,16 @@ class ProductItem extends StatelessWidget {
         ),
         footer: GridTileBar(
           backgroundColor: Colors.black.withOpacity(0.5),
-          title: Text(
-            product.title,
-            textAlign: TextAlign.center,
-          ),
+          title: MediaQuery.of(context).orientation == Orientation.landscape
+              ? Text(
+                  product.title,
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                  style: TextStyle(
+                      fontSize:
+                          MediaQuery.of(context).size.width < 400 ? 10 : 15),
+                )
+              : Container(),
 
           /// Consumer always listens to changes
           /// here provider listener is false so whole widget will not
@@ -44,6 +50,7 @@ class ProductItem extends StatelessWidget {
           leading: Consumer<ProductProvider>(
             builder: (ctx, productProvider, _) {
               return IconButton(
+                iconSize: 20.0,
                 color: Theme.of(context).primaryColor,
                 icon: product.isFavorite
                     ? Icon(Icons.favorite)
@@ -55,6 +62,7 @@ class ProductItem extends StatelessWidget {
             },
           ),
           trailing: IconButton(
+            iconSize: 20.0,
             color: Theme.of(context).accentColor,
             icon: Icon(Icons.shopping_cart),
             onPressed: () {
