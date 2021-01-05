@@ -16,7 +16,10 @@ class ManageProductsItem extends StatelessWidget {
         leading: CircleAvatar(
           backgroundImage: NetworkImage(imageUrl),
         ),
-        title: Text(title),
+        title: Text(
+          title,
+          style: Theme.of(context).textTheme.title,
+        ),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[

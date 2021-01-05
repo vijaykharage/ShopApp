@@ -14,24 +14,30 @@ class CartScreen extends StatelessWidget {
     final orderProvider = Provider.of<OrderProvider>(context);
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red[800],
         title: Text('Cart'),
       ),
       body: Container(
         child: Column(
           children: <Widget>[
             Card(
-              margin: EdgeInsets.all(10),
+              margin: EdgeInsets.all(0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.all(10),
-                    child: Text('Total: '),
+                    padding: EdgeInsets.all(5),
+                    child: Text(
+                      'Total: ',
+                      style: TextStyle(color: Colors.black),
+                    ),
                   ),
-                  Spacer(),
                   Chip(
-                    label: Text(
-                      '\$ ${cartProvider.totalAmount.toStringAsFixed(2)}',
+                    label: FittedBox(
+                      child: Text(
+                        '\$ ${cartProvider.totalAmount.toStringAsFixed(2)}',
+                        style: Theme.of(context).textTheme.title,
+                      ),
                     ),
                   ),
                   FlatButton(

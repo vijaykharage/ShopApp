@@ -53,8 +53,11 @@ class _AddProductScreenState extends State<AddProductScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final textStyle = Theme.of(context).textTheme.title;
+    final primaryColor = Theme.of(context).primaryColor;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red[800],
         title: const Text('Add Product'),
       ),
       body: Padding(
@@ -65,8 +68,17 @@ class _AddProductScreenState extends State<AddProductScreen> {
             child: Column(
               children: <Widget>[
                 TextFormField(
+                  style: TextStyle(
+                    color: textStyle.color,
+                  ),
                   initialValue: _existingProduct.title,
-                  decoration: const InputDecoration(labelText: 'Title'),
+                  decoration: const InputDecoration(
+                    labelText: 'Title',
+                    labelStyle: TextStyle(
+                      color: Colors.red,
+                    ),
+                  ),
+                  cursorColor: Theme.of(context).primaryColor,
                   textInputAction: TextInputAction.next,
                   onFieldSubmitted: (_) {
                     FocusScope.of(context).nextFocus();
@@ -91,8 +103,14 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   },
                 ),
                 TextFormField(
+                  style: textStyle,
                   initialValue: _existingProduct.price.toString(),
-                  decoration: const InputDecoration(labelText: 'Price'),
+                  decoration: const InputDecoration(
+                    labelText: 'Price',
+                    labelStyle: TextStyle(
+                      color: Colors.red,
+                    ),
+                  ),
                   keyboardType: TextInputType.number,
                   focusNode: _priceFocusNode,
                   onFieldSubmitted: (_) {
@@ -122,8 +140,14 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   },
                 ),
                 TextFormField(
+                  style: textStyle,
                   initialValue: _existingProduct.description,
-                  decoration: const InputDecoration(labelText: 'Description'),
+                  decoration: const InputDecoration(
+                    labelText: 'Description',
+                    labelStyle: TextStyle(
+                      color: Colors.red,
+                    ),
+                  ),
                   maxLines: 3,
                   keyboardType: TextInputType.multiline,
                   validator: (value) {
@@ -159,7 +183,9 @@ class _AddProductScreenState extends State<AddProductScreen> {
                       child: _imageUrltextController.text.isEmpty
                           ? const Padding(
                               padding: const EdgeInsets.all(5),
-                              child: Text('Enter Image URL'),
+                              child: Text(
+                                'Enter Image URL',
+                              ),
                             )
                           : ClipRRect(
                               borderRadius: BorderRadius.circular(16),
@@ -172,8 +198,13 @@ class _AddProductScreenState extends State<AddProductScreen> {
                     ),
                     Expanded(
                       child: TextFormField(
-                        decoration:
-                            const InputDecoration(labelText: 'Image URL'),
+                        style: textStyle,
+                        decoration: const InputDecoration(
+                          labelText: 'Image URL',
+                          labelStyle: TextStyle(
+                            color: Colors.red,
+                          ),
+                        ),
                         keyboardType: TextInputType.url,
                         focusNode: _imageFocusNode,
                         controller: _imageUrltextController,
@@ -213,7 +244,11 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   ],
                 ),
                 RaisedButton(
-                  child: Text('SUBMIT'),
+                  color: Colors.red[800],
+                  child: Text(
+                    'SUBMIT',
+                    style: textStyle,
+                  ),
                   onPressed: () {
                     _addProduct(context);
                   },

@@ -44,7 +44,7 @@ class ProductItem extends StatelessWidget {
           leading: Consumer<ProductProvider>(
             builder: (ctx, productProvider, _) {
               return IconButton(
-                color: Theme.of(context).accentColor,
+                color: Theme.of(context).primaryColor,
                 icon: product.isFavorite
                     ? Icon(Icons.favorite)
                     : Icon(Icons.favorite_border),

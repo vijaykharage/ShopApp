@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		m3N38lb/tfzxSobY6foWiawbIRQ=
+		rfjxuewE8pC9z58EwE1c2XGXQwI=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -30,7 +30,11 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		NRgYRhsifCnNbICkdMgQxB18DS8=
+		YNEbX0wFnMWAxDrwGSyLjOi5Dfg=
+		</data>
+		<key>flutter_assets/lib/assets/images/tesla-logo.png</key>
+		<data>
+		q9nrPLZsOL0fhU0FkBkVC/DKUxc=
 		</data>
 		<key>flutter_assets/lib/fonts/Anton-Regular.ttf</key>
 		<data>
@@ -59,11 +63,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			m3N38lb/tfzxSobY6foWiawbIRQ=
+			rfjxuewE8pC9z58EwE1c2XGXQwI=
 			</data>
 			<key>hash2</key>
 			<data>
-			yEmIfH6XIpBbqIH3fKbK+hz42eUE0tHWCQApVWna/Rk=
+			3UYxGfIeXaKubvGhz7xUZh1eNWdHpd0TgbdyNjqmd6I=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -114,11 +118,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NRgYRhsifCnNbICkdMgQxB18DS8=
+			YNEbX0wFnMWAxDrwGSyLjOi5Dfg=
 			</data>
 			<key>hash2</key>
 			<data>
-			9pyo1hDZI1DWOAAX4RdthDMjg6vTzsCwkUsqPuI1DgQ=
+			iDO6PdlpOJ7Mze8XMD7dU4QNcmI5Bn6EtCJa90YoRk4=
+			</data>
+		</dict>
+		<key>flutter_assets/lib/assets/images/tesla-logo.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			q9nrPLZsOL0fhU0FkBkVC/DKUxc=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZDWmTB2hl+O3lWdP7pWlKU7xNllAeLPb1bBfr6Gy0hU=
 			</data>
 		</dict>
 		<key>flutter_assets/lib/fonts/Anton-Regular.ttf</key>

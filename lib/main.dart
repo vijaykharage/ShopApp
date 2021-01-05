@@ -31,10 +31,15 @@ class MyShopApp extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-          accentColor: Colors.deepOrange,
+          
+          primarySwatch: Colors.red,
+          accentColor: Colors.white,
           fontFamily: 'Lato',
-          canvasColor: Colors.white,
+          canvasColor: Colors.black,
+          textTheme: ThemeData.light().textTheme.copyWith(
+            title: TextStyle(color: Colors.white),
+            body1: TextStyle(color: Colors.white60)
+          ),
         ),
         routes: {
           '/': (_) => ProductsOverviewScreen(),

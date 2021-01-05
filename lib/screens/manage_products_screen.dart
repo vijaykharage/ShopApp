@@ -21,6 +21,7 @@ class ManageProductsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red[800],
         title: Text('Manage Products'),
         actions: <Widget>[
           IconButton(
@@ -43,7 +44,7 @@ class ManageProductsScreen extends StatelessWidget {
                   productProvider.items[index].imageUrl,
                   () => _deleteProduct(index),
                 ),
-                Divider(),
+                Divider(color: Theme.of(context).textTheme.body1.color),
               ],
             );
           },

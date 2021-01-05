@@ -16,6 +16,7 @@ class ProductDetailScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red[800],
         title: Text(product.title),
       ),
       body: SingleChildScrollView(
@@ -28,7 +29,7 @@ class ProductDetailScreen extends StatelessWidget {
                   product.imageUrl,
                   fit: BoxFit.cover,
                 ),
-                height: 400,
+                height: 300,
                 width: double.infinity,
                 alignment: Alignment.center,
               ),
@@ -44,7 +45,7 @@ class ProductDetailScreen extends StatelessWidget {
               ),
               Text(
                 '${product.description}',
-                style: const TextStyle(color: Colors.black, fontSize: 15.0),
+                style: const TextStyle(color: Colors.white60, fontSize: 15.0),
                 softWrap: true,
               ),
             ],

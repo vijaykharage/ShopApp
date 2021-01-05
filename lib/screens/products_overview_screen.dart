@@ -27,7 +27,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
     return Scaffold(
       drawer: DrawerWidget(),
       appBar: AppBar(
-        title: Text('Products Overview'),
+        backgroundColor: Colors.red[800],
+        title: Image.asset('./lib/assets/images/tesla-logo.png'),
         actions: <Widget>[
           Consumer<CartProvider>(
             /// here cartChild referes to Consumer child: IconButton()
