@@ -45,7 +45,21 @@ class ManageProductsScreen extends StatelessWidget {
     _showAlert(ctx).then(
       (isOkayToDelete) {
         if (isOkayToDelete) {
-          return productProvider.deleteProduct(productProvider.items[index].id);
+          productProvider
+              .deleteProduct(productProvider.items[index].id)
+              .then((_) {
+            Scaffold.of(ctx).showSnackBar(
+              SnackBar(
+                content: Text('Product Deleted.'),
+              ),
+            );
+          }).catchError((error) {
+            Scaffold.of(ctx).showSnackBar(
+              SnackBar(
+                content: Text('Not able to delete product rn.'),
+              ),
+            );
+          });
         }
       },
     );

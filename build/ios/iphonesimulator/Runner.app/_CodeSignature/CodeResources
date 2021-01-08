@@ -114,7 +114,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		wK8rKri2XAiLrLmSrfYrwz0HnSQ=
+		jtKeaBdb/xDThelusQyGD/K9W1M=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -122,11 +122,11 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		vWI8y3HSZKHZfobXxQiOWOgpWLg=
+		+8FEMq0Qr5f0TdI1kiRneD9Fguc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		rfjxuewE8pC9z58EwE1c2XGXQwI=
+		zq4geV3iSwNj8vNkdBWRtCFT8Sk=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -134,7 +134,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/LICENSE</key>
 		<data>
-		Z9l2eCbvukj+OjpCrxlMufDGcak=
+		WVW8AZaTCOBMfkG42Iapia1AJoM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.ttf</key>
 		<data>
@@ -146,7 +146,11 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		YNEbX0wFnMWAxDrwGSyLjOi5Dfg=
+		WSCo4Tw+grWQ+/sM4UPYe2Nr8DY=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/placeholder.jpg</key>
+		<data>
+		0AvshS427tJMn20xFM16QAJbNxI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/tesla-logo.png</key>
 		<data>
@@ -560,11 +564,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wK8rKri2XAiLrLmSrfYrwz0HnSQ=
+			jtKeaBdb/xDThelusQyGD/K9W1M=
 			</data>
 			<key>hash2</key>
 			<data>
-			s7K7g1J+XwLjJyX54+O6toLMR7Ys8tstn7H4Kr3H9g4=
+			dWHyIBZimwKHALCtqQlMR+heF65YTHDy5uhdMKyCB+g=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -582,22 +586,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vWI8y3HSZKHZfobXxQiOWOgpWLg=
+			+8FEMq0Qr5f0TdI1kiRneD9Fguc=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZWAqYMFqv9Oyj23vwN01pb1wmJgfUB2GbKttAUjF9N8=
+			7EJrTqpPXO50+/1qy8v/Q8KtguaQKiZYsj6E/v08lYo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			rfjxuewE8pC9z58EwE1c2XGXQwI=
+			zq4geV3iSwNj8vNkdBWRtCFT8Sk=
 			</data>
 			<key>hash2</key>
 			<data>
-			3UYxGfIeXaKubvGhz7xUZh1eNWdHpd0TgbdyNjqmd6I=
+			6MMyh/Cx9CGvrXmehgIsmlD2oQe6e/FmR9oVAQ/boCk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -615,11 +619,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Z9l2eCbvukj+OjpCrxlMufDGcak=
+			WVW8AZaTCOBMfkG42Iapia1AJoM=
 			</data>
 			<key>hash2</key>
 			<data>
-			aXkOWsX1wIFg7lXDNv7Gv2FdZYmn1OcQdZgaQQKujMA=
+			OOgjUivulx2w8YhKbH5YRQJwKo0h4Cd569GM0DqkBpk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.ttf</key>
@@ -648,11 +652,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YNEbX0wFnMWAxDrwGSyLjOi5Dfg=
+			WSCo4Tw+grWQ+/sM4UPYe2Nr8DY=
 			</data>
 			<key>hash2</key>
 			<data>
-			iDO6PdlpOJ7Mze8XMD7dU4QNcmI5Bn6EtCJa90YoRk4=
+			R3E0r0nsLHk0UrRyGjbqWLxjyfDYEaCA28+BISCDS2o=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/placeholder.jpg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0AvshS427tJMn20xFM16QAJbNxI=
+			</data>
+			<key>hash2</key>
+			<data>
+			JIqHyeQFYdkiPbYM7b05EuB4RpaiXrZ3O8EKjxZnTHE=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/tesla-logo.png</key>

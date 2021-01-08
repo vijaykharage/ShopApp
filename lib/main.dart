@@ -11,6 +11,7 @@ import './screens/products_overview_screen.dart';
 import './screens/orders_screen.dart';
 import './screens/manage_products_screen.dart';
 import './screens/add_product_screen.dart';
+import './screens/error_screen.dart';
 
 void main() => runApp(MyShopApp());
 
@@ -51,7 +52,7 @@ class MyShopApp extends StatelessWidget {
           AddProductScreen.routeName: (_) => AddProductScreen()
         },
         onUnknownRoute: (settings) {
-          return MaterialPageRoute(builder: (_) => ProductsOverviewScreen());
+          return MaterialPageRoute(builder: (_) => ErrorScreen());
         },
       ),
     );

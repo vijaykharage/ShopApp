@@ -26,9 +26,11 @@ class ProductItem extends StatelessWidget {
               arguments: product.id,
             );
           },
-          child: Image.network(
-            product.imageUrl,
+          child: FadeInImage.assetNetwork(
+            placeholder: './lib/assets/images/placeholder.jpg',
+            image: product.imageUrl,
             fit: BoxFit.cover,
+            fadeInDuration: Duration(milliseconds: 100),
           ),
         ),
         footer: GridTileBar(
@@ -90,8 +92,8 @@ class ProductItem extends StatelessWidget {
           ),
         ),
         header: GridTileBar(
-          backgroundColor: Colors.black.withOpacity(0.2),
-        ),
+            //backgroundColor: Colors.black.withOpacity(0.2),
+            ),
       ),
     );
   }
