@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -9,7 +10,6 @@ class CartScreen extends StatelessWidget {
   static const routeName = '/cart_screen';
   @override
   Widget build(BuildContext context) {
-    print('cart screen is building');
     final cartProvider = Provider.of<CartProvider>(context);
     final orderProvider = Provider.of<OrderProvider>(context);
     return Scaffold(
@@ -44,15 +44,9 @@ class CartScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  FlatButton(
-                    onPressed: () {
-                      orderProvider.placeOrder(
-                        cartProvider.items.values.toList(),
-                        cartProvider.totalAmount,
-                      );
-                      cartProvider.clearCart();
-                    },
-                    child: Text('PLACE ORDER'),
+                  PlaceOrderButton(
+                    cartProvider: cartProvider,
+                    orderProvider: orderProvider,
                   ),
                 ],
               ),
@@ -77,6 +71,60 @@ class CartScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class PlaceOrderButton extends StatefulWidget {
+  const PlaceOrderButton({
+    Key key,
+    @required this.cartProvider,
+    @required this.orderProvider,
+  }) : super(key: key);
+
+  final CartProvider cartProvider;
+  final OrderProvider orderProvider;
+
+  @override
+  _PlaceOrderState createState() => _PlaceOrderState();
+}
+
+class _PlaceOrderState extends State<PlaceOrderButton> {
+  var _isPlacingOrder = false;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 130,
+      child: _isPlacingOrder
+          ? CupertinoActivityIndicator(
+              radius: 15,
+            )
+          : FlatButton(
+              onPressed: widget.cartProvider.totalAmount <= 0
+                  ? null
+                  : () {
+                      setState(() {
+                        _isPlacingOrder = true;
+                      });
+                      widget.orderProvider
+                          .placeOrder(
+                        widget.cartProvider.items.values.toList(),
+                        widget.cartProvider.totalAmount,
+                      )
+                          .then((_) {
+                        Scaffold.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('Order Placed Successdully!!'),
+                          ),
+                        );
+                        setState(() {
+                          _isPlacingOrder = false;
+                        });
+                      });
+                      widget.cartProvider.clearCart();
+                    },
+              child: Text('PLACE ORDER'),
+            ),
     );
   }
 }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../screens/manage_products_screen.dart';
 import '../screens/orders_screen.dart';
+
+import '../providers/auth_provider.dart';
 
 class DrawerWidget extends StatelessWidget {
   @override
@@ -49,6 +52,24 @@ class DrawerWidget extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context)
                       .pushReplacementNamed(ManageProductsScreen.routeName);
+                },
+              ),
+              Divider(),
+              ListTile(
+                leading: Icon(Icons.exit_to_app, color: textStyle.color),
+                title: Text(
+                  "Logout",
+                  style: textStyle,
+                ),
+                onTap: () {
+                  /// to close drawer
+                  Navigator.of(context).pop(); 
+
+                  /// go to home screen after logout to minimize erros 
+                  /// while doing auto login
+                  Navigator.of(context).pushReplacementNamed('/'); 
+                  
+                  Provider.of<AuthProvider>(context, listen: false).logout();
                 },
               ),
               Divider(),

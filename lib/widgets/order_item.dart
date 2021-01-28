@@ -43,7 +43,11 @@ class _OrderItemState extends State<OrderItem> {
                   height: widget.order.products.length * 50.0 + 10,
                   // need to import math
                   child: ListView(
+                    physics: NeverScrollableScrollPhysics(),
                     children: widget.order.products.map((product) {
+                      if (product == null) {
+                        return Container();
+                      }
                       return ListTile(
                         title: Text(product.title),
                         trailing: Text(

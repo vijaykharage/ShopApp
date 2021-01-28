@@ -304,12 +304,20 @@ class _AddProductScreenState extends State<AddProductScreen> {
     });
 
     if (_existingProduct.id != null) {
-      final productProvider = Provider.of<ProductProvider>(ctx, listen: false);
-      productProvider.updateProduct(_existingProduct.id, _existingProduct);
       setState(() {
-        _isAddingProduct = false;
+        _isAddingProduct = true;
       });
-      Navigator.of(ctx).pop();
+      final productProvider = Provider.of<ProductProvider>(ctx, listen: false);
+      await productProvider.updateProduct(_existingProduct.id, _existingProduct).then(
+        (_) {
+          setState(
+            () {
+              _isAddingProduct = false;
+            },
+          );
+          Navigator.of(ctx).pop();
+        },
+      );
     } else {
       final productProvider = Provider.of<ProductProvider>(ctx, listen: false);
       try {
@@ -337,9 +345,11 @@ class _AddProductScreenState extends State<AddProductScreen> {
           },
         );
       } finally {
-        setState(() {
-          _isAddingProduct = false;
-        });
+        setState(
+          () {
+            _isAddingProduct = false;
+          },
+        );
         Navigator.of(context).pop();
       }
     }

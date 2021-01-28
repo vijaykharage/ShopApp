@@ -10,7 +10,19 @@ import '../models/product.dart';
 
 import '../providers/cart_provider.dart';
 
-class ProductItem extends StatelessWidget {
+class ProductItem extends StatefulWidget {
+  @override
+  _ProductItemState createState() => _ProductItemState();
+}
+
+class _ProductItemState extends State<ProductItem> {
+  var _isAddingToCart = false;
+  void _setLoader(bool value) {
+    setState(() {
+      _isAddingToCart = value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context, listen: false);
@@ -26,11 +38,14 @@ class ProductItem extends StatelessWidget {
               arguments: product.id,
             );
           },
-          child: FadeInImage.assetNetwork(
-            placeholder: './lib/assets/images/placeholder.jpg',
-            image: product.imageUrl,
-            fit: BoxFit.cover,
-            fadeInDuration: Duration(milliseconds: 100),
+          child: Hero(
+            tag: product.id,
+            child: FadeInImage.assetNetwork(
+              placeholder: './lib/assets/images/placeholder.jpg',
+              image: product.imageUrl,
+              fit: BoxFit.cover,
+              fadeInDuration: Duration(milliseconds: 100),
+            ),
           ),
         ),
         footer: GridTileBar(
@@ -57,39 +72,73 @@ class ProductItem extends StatelessWidget {
                 icon: product.isFavorite
                     ? Icon(Icons.favorite)
                     : Icon(Icons.favorite_border),
-                onPressed: () {
-                  productProvider.toggleFavorite(product.id);
+                onPressed: () async {
+                  try {
+                    await productProvider.toggleFavorite(product.id);
+                  } catch (error) {
+                    Scaffold.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          error.toString(),
+                        ),
+                      ),
+                    );
+                  }
                 },
               );
             },
           ),
-          trailing: IconButton(
-            iconSize: 20.0,
-            color: Theme.of(context).accentColor,
-            icon: Icon(Icons.shopping_cart),
-            onPressed: () {
-              final cartItem = CartItem(
-                id: product.id,
-                title: product.title,
-                price: product.price,
-                quantity: 1,
-              );
-              cartProvider.addToCart(cartItem);
-              prefix0.Scaffold.of(context).hideCurrentSnackBar();
-              Scaffold.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('Item added to cart!'),
-                  duration: Duration(seconds: 2),
-                  action: SnackBarAction(
-                    label: 'UNDO',
-                    onPressed: () {
-                      cartProvider.undoAddAction(product.id);
-                    },
-                  ),
+          trailing: _isAddingToCart
+              ? Container(
+                margin: const EdgeInsets.only(right: 15),
+                padding: const EdgeInsets.all(4),
+                  width: 20,
+                  height: 20,
+                  child: CircularProgressIndicator(),
+                )
+              : IconButton(
+                  iconSize: 20.0,
+                  color: Theme.of(context).accentColor,
+                  icon: Icon(Icons.shopping_cart),
+                  onPressed: () async {
+                    final cartItem = CartItem(
+                      id: product.id,
+                      title: product.title,
+                      price: product.price,
+                      quantity: 1,
+                    );
+                    try {
+                      _setLoader(true);
+                      await cartProvider.addToCart(cartItem);
+                    } catch (error) {
+                      _setLoader(false);
+                      prefix0.Scaffold.of(context).hideCurrentSnackBar();
+                      Scaffold.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            error.toString(),
+                          ),
+                          duration: Duration(seconds: 2),
+                        ),
+                      );
+                      return;
+                    }
+                    _setLoader(false);
+                    prefix0.Scaffold.of(context).hideCurrentSnackBar();
+                    Scaffold.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Item added to cart!'),
+                        duration: Duration(seconds: 2),
+                        action: SnackBarAction(
+                          label: 'UNDO',
+                          onPressed: () {
+                            cartProvider.undoAddAction(product.id);
+                          },
+                        ),
+                      ),
+                    );
+                  },
                 ),
-              );
-            },
-          ),
         ),
         header: GridTileBar(
             //backgroundColor: Colors.black.withOpacity(0.2),
